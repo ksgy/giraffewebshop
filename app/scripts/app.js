@@ -32,6 +32,11 @@ angular
         controller: 'GiraffesCtrl',
         controllerAs: 'giraffes'
       })
+      .when('/cart', {
+        templateUrl: 'views/cart.html',
+        controller: 'CartCtrl',
+        controllerAs: 'cart'
+      })
       .otherwise({
         redirectTo: '/'
       });
