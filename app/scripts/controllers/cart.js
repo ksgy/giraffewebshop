@@ -9,5 +9,7 @@
  */
 angular.module('giraffeWebshopApp')
   .controller('CartCtrl', function (shoppingCart) {
+
     this.items = shoppingCart.getCartContents();
+
   });

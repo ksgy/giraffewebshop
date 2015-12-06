@@ -1,4 +1,8 @@
 <h4>Shopping Cart</h4>
-<ul>
+
+<p>You have the following items in your cart:</p>
+<ul class="cart list">
   <li ng-repeat="item in cart.items track by $index">{{ item.name }}</li>
 </ul>
+
+<a class="checkout" ng-href="#/checkout">Checkout</a>

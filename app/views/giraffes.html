@@ -1,16 +1,21 @@
 <h4>Choose your Giraffe:</h4>
 
+<a class="checkout" ng-href="#/checkout">Checkout</a>
+
 <p ng-if="!giraffes.giraffes">Hang on, loading Giraffes...</p>
 
-<ul>
+<ul class="giraffes list">
   <li ng-repeat="giraffe in giraffes.giraffes track by giraffe.id">
     <h5>{{ giraffe.name }}</h5>
     <p>{{ giraffe.description }}</p>
     <ul>
-      <li>{{ giraffe.price }}</li>
+      <li>Price: {{ giraffe.price }}</li>
       <li><button ng-click="giraffes.add(giraffe)">Add to cart</button></li>
     </ul>
   </li>
+
 </ul>
+
+
 
 
