@@ -2,7 +2,10 @@
 
 <p>You have the following items in your cart:</p>
 <ul class="cart list">
-  <li ng-repeat="item in cart.items track by $index">{{ item.name }}</li>
+  <li ng-repeat="item in cart.items track by $index">{{ item.name }}
+    <span>{{ item.amount }} <button ng-click="cart.remove(item.id)">Remove</button></span>
+
+  </li>
 </ul>
 
 <a class="checkout" ng-href="#/checkout">Checkout</a>

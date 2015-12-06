@@ -12,4 +12,6 @@ angular.module('giraffeWebshopApp')
 
     this.items = shoppingCart.getCartContents();
 
+    this.remove = shoppingCart.removeItem;
+
   });
