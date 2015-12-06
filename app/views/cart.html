@@ -1,11 +1,18 @@
 <h4>Shopping Cart</h4>
 
-<p>You have the following items in your cart:</p>
-<ul class="cart list">
-  <li ng-repeat="item in cart.items track by $index">{{ item.name }}
-    <span>{{ item.amount }} <button ng-click="cart.remove(item.id)">Remove</button></span>
+<div ng-if="cart.items.length == 0">
+  <p>No giraffes found in your cart :(</p>
+  <p><a ng-href="#/giraffes">Go and buy one! :)</a></p>
+</div>
 
-  </li>
-</ul>
+<div ng-if="cart.items.length > 0">
+  <p>You have the following items in your cart:</p>
+  <ul class="cart list">
+    <li ng-repeat="item in cart.items track by $index">{{ item.name }}
+      <span>{{ item.amount }} <button ng-click="cart.remove(item.id)">-</button><button ng-click="cart.add(item)">+</button></span>
 
-<a class="checkout" ng-href="#/checkout">Checkout</a>
+    </li>
+  </ul>
+
+  <a class="checkout" ng-href="#/checkout">Checkout</a>
+</div>

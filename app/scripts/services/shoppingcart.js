@@ -39,11 +39,25 @@ angular.module('giraffeWebshopApp')
       return total
     };
 
+    var getTotalPrice = function(){
+      var total = 0;
+      _.forEach(items, function(item){
+        total += item.price * item.amount;
+      });
+      return total;
+    }
+
+    var clearItems = function() {
+      items = [];
+    };
+
     var api = {
       getCartContents: getCartContents,
       addItem: addItem,
       removeItem: removeItem,
-      getTotal: getTotal
+      getTotal: getTotal,
+      getTotalPrice: getTotalPrice,
+      clearItems: clearItems
     }
 
     return api

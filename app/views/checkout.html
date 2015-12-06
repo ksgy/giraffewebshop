@@ -1,1 +1,23 @@
-<p>This is the checkout view.</p>
+<div ng-if="checkout.items.length == 0">
+  <p>No giraffes found in your cart :(</p>
+  <p><a ng-href="#/giraffes">Go and buy one! :)</a></p>
+</div>
+<div ng-if="checkout.items.length > 0">
+  <p>Please review your items:</p>
+  <ul class="checkout list">
+    <li ng-repeat="item in checkout.items track by $index">{{ item.name }}
+      <span>{{ item.amount }}</span>
+    </li>
+  </ul>
+
+  <p>Please select how we should deliver your Giraffe(s):</p>
+  <p><select ng-options="item as item for item in checkout.delivery" ng-model="checkout.selectedDelivery"></select></p>
+
+  <div ng-if="checkout.selectedDelivery != ''">
+    <p><a ng-href="#/summary">Review Giraffes...</a></p>
+  </div>
+  <p><a ng-href="#/cart">Go back to shopping cart</a></p>
+
+</div>
+
+

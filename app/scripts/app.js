@@ -42,6 +42,16 @@ angular
         controller: 'CheckoutCtrl',
         controllerAs: 'checkout'
       })
+      .when('/summary', {
+        templateUrl: 'views/summary.html',
+        controller: 'SummaryCtrl',
+        controllerAs: 'summary'
+      })
+      .when('/thankyou', {
+        templateUrl: 'views/thankyou.html',
+        controller: 'ThankyouCtrl',
+        controllerAs: 'thankyou'
+      })
       .otherwise({
         redirectTo: '/'
       });
