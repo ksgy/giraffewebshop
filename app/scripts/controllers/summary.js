@@ -11,4 +11,5 @@ angular.module('giraffeWebshopApp')
   .controller('SummaryCtrl', function (shoppingCart) {
     this.items = shoppingCart.getCartContents();
     this.getTotalPrice = shoppingCart.getTotalPrice;
+    this.shoppingCart = shoppingCart;
   });

@@ -2,7 +2,7 @@
 
 <div ng-if="cart.items.length == 0">
   <p>No giraffes found in your cart :(</p>
-  <p><a ng-href="#/giraffes">Go and buy one! :)</a></p>
+  <p><a class="button" ng-href="#/giraffes">Go and buy one! :)</a></p>
 </div>
 
 <div ng-if="cart.items.length > 0">
@@ -14,5 +14,5 @@
     </li>
   </ul>
 
-  <a class="checkout" ng-href="#/checkout">Checkout</a>
+  <a class="checkout button" ng-href="#/checkout">Checkout</a>
 </div>

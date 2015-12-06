@@ -48,7 +48,7 @@ angular.module('giraffeWebshopApp')
 
       $timeout(function(){
         d.resolve(giraffes);
-      }, 1000);
+      }, 50);
 
       return d.promise;
     };

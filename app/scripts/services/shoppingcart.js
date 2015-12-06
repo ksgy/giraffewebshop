@@ -9,6 +9,7 @@
  */
 angular.module('giraffeWebshopApp')
   .service('shoppingCart', function () {
+    var th = this;
     var items = [];
     var getCartContents = function(){
       return items;
@@ -44,11 +45,14 @@ angular.module('giraffeWebshopApp')
       _.forEach(items, function(item){
         total += item.price * item.amount;
       });
+
+      total += this.shoppingCart.selectedDelivery.price;
       return total;
     }
 
     var clearItems = function() {
       items = [];
+      this.selectedDelivery = null;
     };
 
     var api = {

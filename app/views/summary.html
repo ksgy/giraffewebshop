@@ -1,18 +1,19 @@
 <div ng-if="summary.items.length == 0">
   <p>No giraffes found in your cart :(</p>
-  <p><a ng-href="#/giraffes">Go and buy one! :)</a></p>
+  <p><a class="button" ng-href="#/giraffes">Go and buy one! :)</a></p>
 </div>
 <div ng-if="summary.items.length > 0">
-  <p>Items you buy:</p>
+  <p>Summary:</p>
   <ul class="summary list">
     <li ng-repeat="item in summary.items track by $index">{{ item.name }}
-      <span>{{ item.amount }} ({{item.amount * item.price }})</span>
+      <span>{{ item.amount }}x giraffe(s) ({{item.amount * item.price }} bitcoin)</span>
     </li>
+    <li ng-if="summary.shoppingCart.selectedDelivery.price">Shipping: {{ summary.shoppingCart.selectedDelivery.price }} bitcoin</li>
   </ul>
-  <p>Total: {{ summary.getTotalPrice() }}</p>
+  <p>Total: {{ summary.getTotalPrice() }} bitcoin</p>
 
-  <p><a ng-href="#/thankyou">Gimme those Giraffes!</a></p>
-  <p><a ng-href="#/cart">Go back to shopping cart</a></p>
+  <p><a class="button" ng-href="#/thankyou">Gimme those Giraffes!</a></p>
+  <p><a class="button" ng-href="#/cart">Go back to shopping cart</a></p>
 
 
 </div>
