@@ -6,18 +6,25 @@ describe('Controller: CheckoutCtrl', function () {
   beforeEach(module('giraffeWebshopApp'));
 
   var CheckoutCtrl,
-    scope;
+    scope,
+    shoppingCart;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _shoppingCart_) {
     scope = $rootScope.$new();
     CheckoutCtrl = $controller('CheckoutCtrl', {
-      $scope: scope
+      $scope: scope,
+      shoppingCart: _shoppingCart_
       // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(CheckoutCtrl.awesomeThings.length).toBe(3);
+  it('should check for delivery types', function () {
+    expect(CheckoutCtrl.delivery.length).toBeGreaterThan(0);
   });
+
+  it('by default 0 items', function () {
+    expect(CheckoutCtrl.items.length).toBe(0);
+  });
+
 });

@@ -11,6 +11,7 @@ angular.module('giraffeWebshopApp')
   .controller('GiraffesCtrl', function (Giraffes, shoppingCart) {
 
     var th = this;
+    th.giraffes = [];
 
     Giraffes.getGiraffes().then(function(giraffes) {
       th.giraffes = giraffes;

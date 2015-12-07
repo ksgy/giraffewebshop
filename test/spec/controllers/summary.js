@@ -17,7 +17,6 @@ describe('Controller: SummaryCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(SummaryCtrl.awesomeThings.length).toBe(3);
-  });
+
 });
+

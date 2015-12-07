@@ -6,18 +6,19 @@ describe('Controller: GiraffesCtrl', function () {
   beforeEach(module('giraffeWebshopApp'));
 
   var GiraffesCtrl,
-    scope;
+    scope, Giraffes;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _Giraffes_) {
     scope = $rootScope.$new();
     GiraffesCtrl = $controller('GiraffesCtrl', {
-      $scope: scope
-      // place here mocked dependencies
+      $scope: scope,
+      Giraffes: _Giraffes_
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(GiraffesCtrl.awesomeThings.length).toBe(3);
+  it('should be 0 items by default', function () {
+      expect(GiraffesCtrl.giraffes.length).toBe(0);
   });
+
 });

@@ -77,8 +77,8 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: false,
-          // open: true,
+          // open: false,
+          open: true,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -450,7 +450,7 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'test/karma.conf.js',
-        singleRun: true
+        singleRun: false
       }
     }
   });
